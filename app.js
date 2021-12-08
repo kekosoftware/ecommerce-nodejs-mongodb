@@ -21,12 +21,14 @@ app.use(errorHandler);
 const productsRoutes = require('./routers/products')
 const categoriesRoutes = require('./routers/categories')
 const usersRoutes = require('./routers/users')
+const ordersRoutes = require('./routers/orders')
 
 const api = process.env.API_URL;
 
 app.use(`${api}/products`, productsRoutes)
 app.use(`${api}/categories`, categoriesRoutes)
 app.use(`${api}/users`, usersRoutes)
+app.use(`${api}/orders`, ordersRoutes)
 
 
 mongoose.connect(process.env.CONNECTION_STRING)
